@@ -21,14 +21,14 @@ public class CentralController : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             Instance = this;
             Thread t = new Thread(new ThreadStart(() => {
-                if (_timeSinceLastTick > ) {
+                if (_timeSinceLastTick >= (1000 / _timeSinceLastTick) / 1000) {
                     Instance.Events.SendCentralTick();
                 }
                 else
                 {
                     _timeSinceLastTick += Time.deltaTime;
                 }
-                    Thread.Sleep(1);
+                Thread.Sleep(1);
             }));
             t.Start();
             Resolution = Screen.currentResolution;
