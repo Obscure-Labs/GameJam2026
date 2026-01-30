@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class CentralController : MonoBehaviour
 {
-    public CentralController Instance = null;
+    public static CentralController Instance = null;
     public Events Events = new Events();
     public float _timeSinceLastTick;
 
     [Header("Global Controls")]
     public int EventDrivenTickrate = 60;
-    [Header("Player Settings")]
+
+    [Header("Player Settings")] 
+    public float MovementSpeed = 1;
     public float Volume = 50f;
     public Resolution Resolution;
 

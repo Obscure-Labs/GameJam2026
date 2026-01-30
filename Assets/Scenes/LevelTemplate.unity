@@ -420,9 +420,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e116bf1c66fcfcc4fb42870b5967dd23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CentralController
-  Instance: {fileID: 0}
   _timeSinceLastTick: 0
   EventDrivenTickrate: 60
+  MovementSpeed: 1
   Volume: 50
 --- !u!4 &829151915
 Transform:
@@ -976,6 +976,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2127697593}
   - component: {fileID: 2127697594}
+  - component: {fileID: 2127697595}
   m_Layer: 0
   m_Name: Bro
   m_TagString: Player
@@ -1057,6 +1058,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &2127697595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127697592}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaf778803446ad84f9ec127e3444d2a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
