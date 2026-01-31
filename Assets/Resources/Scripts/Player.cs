@@ -20,8 +20,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void Update()
+    public void OnTriggerEnter(Collider other)
     {
-        
+        if (other.CompareTag("Mask"))
+        {
+            other.gameObject.transform.parent.GetComponent<Mask>();
+        }
     }
 }

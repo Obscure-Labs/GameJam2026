@@ -14,7 +14,6 @@ public class PlayerMovement : MonoBehaviour
 
         float sprintMod = Input.GetKey(KeyCode.LeftShift) ? SprintSpeed : 1f;
 
-        var parent = transform.parent.transform;
-        parent.position += (x * transform.right + z * transform.forward) * (Time.deltaTime * 7.5f * WalkSpeed * sprintMod);
+        transform.position += (x * transform.right + z * transform.forward) * (Time.deltaTime * 7.5f * WalkSpeed * sprintMod);
     }
 }
