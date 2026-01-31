@@ -1,9 +1,10 @@
 using UnityEngine;
+using UnityEngine.Jobs;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float WalkSpeed = 1;
-    public float SprintSpeed = 1;
+    public float WalkSpeed = 1f;
+    public float SprintSpeed = 1.5f;
 
     public void Update()
     {
@@ -11,10 +12,9 @@ public class PlayerMovement : MonoBehaviour
         x = Input.GetAxisRaw("Horizontal");
         z = Input.GetAxisRaw("Vertical");
 
-        SprintSpeed = Input.GetKey(KeyCode.LeftShift) ? 1.5f : 1f;
+        float sprintMod = Input.GetKey(KeyCode.LeftShift) ? SprintSpeed : 1f;
 
         var parent = transform.parent.transform;
-        parent.position = new Vector3(parent.position.x + x * (Time.deltaTime * 100 * WalkSpeed * SprintSpeed), parent.position.y,
-            parent.position.z + z * (Time.deltaTime * 100 * WalkSpeed * SprintSpeed));
+        parent.position += (x * transform.right + z * transform.forward) * (Time.deltaTime * 7.5f * WalkSpeed * sprintMod);
     }
 }
