@@ -8,7 +8,7 @@ public class CentralController : MonoBehaviour
     public Events Events = new Events();
     public float _timeSinceLastTick;
 
-    [Header("Player Settings")] 
+    [Header("Player Settings")]
     public float MovementSpeed = 1;
     public float Volume = 50f;
     public Resolution Resolution;
@@ -20,6 +20,10 @@ public class CentralController : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             Instance = this;
             Resolution = Screen.currentResolution;
+        }
+        else
+        {
+            DestroyImmediate(this);
         }
     }
 }
